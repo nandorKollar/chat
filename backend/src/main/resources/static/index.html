@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Cset</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+              integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+                integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+                crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="css/app.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/user-service.js"></script>
+        <script src="js/user-controller.js"></script>
+    </head>
+    <body ng-app="chatApp">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Chat</a>
+                <button type="button" class="btn btn-link pull-right" ng-click="logout()">Logout</button>
+            </div>
+        </nav>
+        <div class="user-list" ng-controller="UserListController" class="container" role="main">
+            <ul ng-model="users" class="list-group">
+                <li ng-repeat="user in users" class="list-group-item">
+                    <div>
+                        <span class="glyphicon glyphicon-user"></span>
+                        {{user.username}}
+                        <span class="label label-default pull-right">{{user.online | online}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

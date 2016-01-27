@@ -1,0 +1,9 @@
+body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.user-list {
+    padding-left: 10px;
+    max-width: 300px;
+}
